@@ -1,9 +1,11 @@
 // const url =  'https://testimonialapi.toolcarton.com/api';
 
-// const testimonial = document.getElementById('showApi');
+let testimonial = document.getElementById('showApi');
+let carrousel1 = document.getElementById('carrousel')
+let buttonLeft1 = document.getElementById('buttonLeft')
+let buttonRight = document.getElementById('buttonRight')
 
-
-
+window.addEventListener('load', function() {
 
     async function fetchApis() {
         const url =  'https://testimonialapi.toolcarton.com/api';
@@ -29,10 +31,19 @@
             html += htmlSegment;
         });
     
-        let container = document.getElementById('showApi');
-        container.innerHTML = html;
+       
+        testimonial.innerHTML = html;
     }
     
     renderUsers();
 
+    counter = 0 ;
+    const setImage = () => {
+    carrousel1.src= testimonial[counter]
+    counter = (counter +1) % testimonial.length;
+    
+    }
+    
+    setInterval(setImage, 1000);
+})
 
