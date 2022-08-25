@@ -2,7 +2,7 @@
 
 let testimonial = document.getElementById('showApi');
 let carrousel1 = document.getElementById('carrousel')
-let buttonLeft1 = document.getElementById('buttonLeft')
+let buttonLeft = document.getElementById('buttonLeft')
 let buttonRight = document.getElementById('buttonRight')
 let avatar = document.getElementById('avatar')
 let message = document.getElementById('message')
@@ -14,6 +14,7 @@ let designation = document.getElementById('designation')
 
 window.addEventListener('load', function () {
 
+    let counter = 0;
     async function fetchApis() {
         const url = 'https://testimonialapi.toolcarton.com/api';
         try {
@@ -24,9 +25,9 @@ window.addEventListener('load', function () {
         }
     }
 
-
-
+    
     async function renderUsers() {
+       
         let users = await fetchApis();
         // let html = [];
         // users.forEach(user => {
@@ -40,23 +41,38 @@ window.addEventListener('load', function () {
         // }
         // );
 
-        let name1 = users[1].name
-        let avatar1 = users[1].avatar
-        let message1 = users[1].message
-        let designation1 = users[1].designation
 
-        testimonial.innerHTML = `<p>${name1}</p>` + `<img src="${avatar1}">` + `<h2> ${designation1}</h2>` + `<h4> ${message1}</h4>`;
-    }
+        let name1 = users[0].name
+        let avatar1 = users[0].avatar
+        let message1 = users[0].message
+        let designation1 = users[0].designation
 
-    renderUsers();
+        testimonial.innerHTML = `<img src="${avatar1}">` + `<p>${name1}</p>` + `<h2> ${designation1}</h2>` + `<h4> ${message1}</h4>`;
+    
 
-    counter = 0;
-    const setImage = () => {
-        carrousel1.src = testimonial[counter]
-        counter = (counter + 1) % testimonial.length;
 
-    }
+    
 
-    setInterval(setImage, 1000);
+    
+    buttonRight.addEventListener('click', function() {
+      console.log('buttonnext');
+        counter++;
+        if(counter > users.length -1) {
+            counter=0;
+        }
+        renderUsers        
+    })
+    
+    
+    buttonLeft.addEventListener('click', function() {
+        console.log('buttonprevious');
+        counter--;
+        if(counter < 0) {
+            counter=users.length -1;
+        }
+        renderUsers(counter);
+    })
+}
+renderUsers();
 })
 
