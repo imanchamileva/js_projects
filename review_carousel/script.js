@@ -12,8 +12,7 @@ let designation = document.getElementById('designation')
 
 
 let currentItem = 0;
-window.addEventListener('load', function () {
-
+window.addEventListener('load', function() {
 
     async function fetchApis() {
         const url = 'https://testimonialapi.toolcarton.com/api';
@@ -54,22 +53,22 @@ window.addEventListener('load', function () {
         console.log(showUsers);
 
 
-        buttonRight.addEventListener('click', function () {
+        buttonRight.addEventListener('click', function() {
             currentItem++;
             if (currentItem > showUsers.length - 1) {
                 currentItem = 0
             }
-            renderUsers(currentItem)
+            renderUsers()
 
         })
 
 
-        buttonLeft.addEventListener('click', function () {
+        buttonLeft.addEventListener('click', function() {
             currentItem--;
             if (currentItem < 0) {
                 currentItem = showUsers.length - 1;
             }
-            renderUsers(currentItem);
+            renderUsers();
         })
     }
     renderUsers();
