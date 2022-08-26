@@ -11,10 +11,10 @@ let designation = document.getElementById('designation')
 
 
 
-
+let currentItem = 0;
 window.addEventListener('load', function () {
 
-    let counter = 0;
+
     async function fetchApis() {
         const url = 'https://testimonialapi.toolcarton.com/api';
         try {
@@ -25,10 +25,10 @@ window.addEventListener('load', function () {
         }
     }
 
-    
+
     async function renderUsers() {
-       
-        let users = await fetchApis();
+
+        let showUsers = await fetchApis();
         // let html = [];
         // users.forEach(user => {
         //     let htmlSegment = `<div class="user">
@@ -42,37 +42,37 @@ window.addEventListener('load', function () {
         // );
 
 
-        let name1 = users[0].name
-        let avatar1 = users[0].avatar
-        let message1 = users[0].message
-        let designation1 = users[0].designation
 
-        testimonial.innerHTML = `<img src="${avatar1}">` + `<p>${name1}</p>` + `<h2> ${designation1}</h2>` + `<h4> ${message1}</h4>`;
-    
+        let name = showUsers[currentItem].name
+        let avatar = showUsers[currentItem].avatar
+        let message = showUsers[currentItem].message
+        let designation = showUsers[currentItem].designation
+
+        testimonial.innerHTML = `<img src="${avatar}">` + `<p>${name}</p>` + `<h2> ${designation}</h2>` + `<h4> ${message}</h4>`;
 
 
-    
+        console.log(showUsers);
 
-    
-    buttonRight.addEventListener('click', function() {
-      console.log('buttonnext');
-        counter++;
-        if(counter > users.length -1) {
-            counter=0;
-        }
-        renderUsers        
-    })
-    
-    
-    buttonLeft.addEventListener('click', function() {
-        console.log('buttonprevious');
-        counter--;
-        if(counter < 0) {
-            counter=users.length -1;
-        }
-        renderUsers(counter);
-    })
+
+        buttonRight.addEventListener('click', function () {
+            currentItem++;
+            if (currentItem > showUsers.length - 1) {
+                currentItem = 0
+            }
+            renderUsers(currentItem)
+
+        })
+
+
+        buttonLeft.addEventListener('click', function () {
+            currentItem--;
+            if (currentItem < 0) {
+                currentItem = showUsers.length - 1;
+            }
+            renderUsers(currentItem);
+        })
+    }
+    renderUsers();
 }
-renderUsers();
-})
+)
 
