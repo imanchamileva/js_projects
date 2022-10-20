@@ -6,7 +6,7 @@
 
 }
 
-nav {
+.navLinks {
  width:100%;
  display:flex;
  flex-direction: row;
@@ -61,7 +61,7 @@ a:hover {
 
 .burger div {
     width:25px;
-    height:5px;
+    height:8vh;
     background-color:rgb(237, 234, 234);
     margin:5px;
 }
@@ -70,9 +70,20 @@ a:hover {
     display:none;
 }
 
+@media screen and (max-width: 1200px) {
+
+  
+}
+
 @media screen and (max-width: 768px) {
 
-    nav{
-        display:none;
+    ul{
+        position:absolute;
+     
+     
+      
+    
+        
+       
     }
 }
