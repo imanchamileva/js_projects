@@ -30,7 +30,9 @@ li {
     padding:25px;
 }
 
-
+.burger {
+    display:none;
+}
 
 
 
@@ -59,7 +61,7 @@ li {
         display:flex;
         flex-direction:column;
         align-items:center;
-        background-color: rgb(231, 90, 2);
+        background-color: rgb(223, 108, 37);
         font-size: 20px;
         padding:7px;
       
@@ -67,14 +69,19 @@ li {
     }
 
 
-    /* .navLinks li {
+    .navLinks li {
+        color:white;
+        display:flex;
+        justify-content:space-around;
+        height:200px;
+        align-items:center;
         opacity:0;
-    } */
+    }
 
     .burger {
         display:block;
         cursor:pointer;
-        right:0px;
+       background-color:white;
      
     }
 
