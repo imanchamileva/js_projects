@@ -60,15 +60,16 @@ a:hover {
 .burger div {
     width:20px;
     height:3px;
-    background-color:rgb(237, 234, 234);
+    background-color:rgb(149, 22, 22);
     margin:5px;
   
 }
 
 .burger {
-    /* display:none; */
-    display:flex;
+    display:none;
+  
 }
+
 
 
 @media screen and (max-width: 1200px) {
@@ -102,16 +103,8 @@ a:hover {
     .burger {
         display:block;
         cursor:pointer;
-        display:flex;
-        flex-direction:row;
-      
+     
     }
 
-    .burger div  {
-        display:flex;
-        flex-direction:row;
-        
-
-        
-    }
+ 
 }
