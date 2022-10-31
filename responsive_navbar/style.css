@@ -89,15 +89,11 @@ li {
     }
 
 
-    /* .navLinks li {
-
-        opacity:0;
-    } */
-
     .burger {
         display:block;
         cursor:pointer;
     }
+
     .burger div {
         transition: all 0.3s ease;
     }
@@ -108,13 +104,14 @@ li {
     }
 
     .toggle .line1 {
-        transform:rotate(-45deg) translate(-5px, 6px);
+        transform: rotate(-45deg) translate(-5px, 5px);
     }
 
     .toggle .line2 {
         opacity:0;
     }
+
     .toggle .line3 {
-        transform:rotate(45deg) translate(-5px, -6px);
+        transform: rotate(45deg) translate(-5px, -5px);
     }
 }
