@@ -46,3 +46,8 @@
     align-items:center;
     display:none;
 }
+
+
+.buttonClose {
+  display:none;
+}
