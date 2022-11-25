@@ -7,31 +7,43 @@ const modalSection1 = document.querySelector('.modalSection1')
 const modalButton = document.querySelector('.buttonClose')
 
 
-buttonOpen.addEventListener('click', function () {
-
-    showModal.style.display = "block";
-
-
-})
 
 buttonOpen.addEventListener('click', function () {
 
-    modalButton.style.display = "block";
-
-})
-
-buttonOpen.addEventListener('click', function () {
-
-    modalSection1.style.display = "none";
+    modalSection1.classList.add('modalSection2')
 })
 
 
 modalButton.addEventListener('click', function () {
 
-    modalSection1.style.display = "block";
+    modalSection1.classList.remove('modalSection2')
 })
 
-modalButton.addEventListener('click', function () {
+// buttonOpen.addEventListener('click', function () {
 
-    showModal.style.display = "none";
-})
+//     showModal.style.display = "block";
+
+
+// })
+
+// buttonOpen.addEventListener('click', function () {
+
+//     modalButton.style.display = "block";
+
+// })
+
+// buttonOpen.addEventListener('click', function () {
+
+//     modalSection1.style.display = "none";
+// })
+
+
+// modalButton.addEventListener('click', function () {
+
+//     modalSection1.style.display = "block";
+// })
+
+// modalButton.addEventListener('click', function () {
+
+//     showModal.style.display = "none";
+// })
