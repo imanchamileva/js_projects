@@ -51,6 +51,9 @@
     
 }
 
+.modalContainer {
+  position: relative;
+}
 
 .buttonClose {
   display:block;
