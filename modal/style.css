@@ -24,8 +24,10 @@
     flex-direction: column;
     justify-content:space-evenly;
     align-items:center;
+    display: block;
+    
 }
-.button {
+.buttonOpen {
     width:10em;
     height:4em;
     background-color:rgb(45, 119, 240);
@@ -44,10 +46,18 @@
     flex-direction: column;
     justify-content:space-evenly;
     align-items:center;
-    display:none;
+    visibility:hidden;
+    z-index:-10;
+    
 }
 
 
 .buttonClose {
-  display:none;
+  display:block;
+  position: absolute;
+}
+
+.open-modal {
+ visibility:visible;
+ z-index:10;
 }

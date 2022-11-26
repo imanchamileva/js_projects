@@ -1,22 +1,22 @@
-const buttonOpen = document.querySelector('.button-open');
+const buttonOpen = document.querySelector('.buttonOpen');
 
-const showModal = document.querySelector('.modalSection2')
+const modalButton = document.querySelector('.buttonClose');
 
-const modalSection1 = document.querySelector('.modalSection1')
+const modalSection1 = document.querySelector('.modalSection1');
 
-const modalButton = document.querySelector('.buttonClose')
+const modalSection2 = document.querySelector('.modalSection2');
 
 
 
 buttonOpen.addEventListener('click', function () {
 
-    modalSection1.classList.add('modalSection2')
+    modalSection2.classList.add('open-modal')
 })
 
 
 modalButton.addEventListener('click', function () {
 
-    modalSection1.classList.remove('modalSection2')
+    modalSection2.classList.remove('open-modal')
 })
 
 // buttonOpen.addEventListener('click', function () {
