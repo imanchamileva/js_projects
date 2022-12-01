@@ -54,10 +54,11 @@ p {
 }
 
 
-.text {
+.text1, .text2,.text3 {
     display:none;
 
 }
+
 
 .showText {
     display:block;
