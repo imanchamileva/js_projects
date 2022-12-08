@@ -1,0 +1,38 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+.general {
+    padding: 10px;
+    background-color: aliceblue;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items:center;
+    height:100vh;
+}
+
+
+button {
+    padding:4px;
+    background-color: white;
+    color:rgb(236, 172, 94);
+    border: 2px solid  rgb(236, 172, 94);
+    border-radius: 5px;
+
+}
+
+.buttonDiv {
+    width: 300px;
+    display:flex;
+    justify-content:space-between;
+
+
+}
+
+h1 {
+    padding:10px;
+}
